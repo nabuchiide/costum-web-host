@@ -98,8 +98,26 @@ section{padding:42px 0}
 .trend img{width:72px;height:60px;object-fit:cover;border-radius:12px}
 .trend h4{margin:0;font-size:14.5px;font-weight:600}
 
-.market-grid{grid-template-columns:1.2fr .8fr}
-.stat{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.market-grid{
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 28px;
+}
+.market-section {
+    width: 100%;
+}
+.top-movers {
+    width: 100%;
+}
+.stat{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 12px;
+    border-radius:12px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1)
+}
 .stat b{color:var(--accent)}
 .mini-list{display:grid;gap:10px}
 
@@ -138,4 +156,41 @@ footer{margin-top:56px;padding:40px 0 60px;background:radial-gradient(1000px 600
 .pro-preset{display:flex;flex-wrap:wrap;gap:8px}
 
 @media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto}}
-@media (max-width:1024px){.hero{padding-top:56px}.hero-grid,.news-grid,.market-grid,.learn-grid,.foot-grid,.prochat{grid-template-columns:1fr}.trending{position:relative;top:0}}
+@media (max-width:1024px){
+    .hero{padding-top:56px}
+    .hero-grid,.news-grid,.market-grid,.learn-grid,.foot-grid,.prochat{grid-template-columns:1fr}
+    .trending{position:relative;top:0}
+    .market-section, .top-movers {
+        margin-bottom: 20px;
+    }
+    #tradingview-widget {
+        min-height: 350px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .market-grid {
+        gap: 20px;
+    }
+    .section-title {
+        font-size: 24px;
+    }
+    .section-sub {
+        font-size: 14px;
+    }
+    #tradingview-widget {
+        min-height: 300px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .market-grid {
+        gap: 16px;
+    }
+    #tradingview-widget {
+        min-height: 250px !important;
+    }
+    .glass.media {
+        padding: 10px !important;
+    }
+}
