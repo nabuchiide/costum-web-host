@@ -91,4 +91,25 @@ document.addEventListener('DOMContentLoaded', function() {
       }catch(err){ proMsgs.lastChild.remove(); proAdd('bot','Gagal menghubungi server pro-chat.'); }
     });
   }
+
+  // Dropdown nav Info & Update
+
+  const navGroup = document.querySelector('.nav-group');
+  if (navGroup) {
+    const btn = navGroup.querySelector('button');
+    const dropdown = navGroup.querySelector('.nav-dropdown');
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      dropdown.style.display = expanded ? 'none' : 'block';
+    });
+    document.addEventListener('click', function() {
+      btn.setAttribute('aria-expanded', false);
+      dropdown.style.display = 'none';
+    });
+    dropdown.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  }
 });
