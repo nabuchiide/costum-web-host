@@ -118,20 +118,36 @@
         <b>HodlMagz</b>
       </div>
       <div class="nav-links">
-        <a href="#coinmagz">CoinMagz</a>
-        <a href="#learn">Belajar</a>
-        <a href="#news">Berita</a>
-        <a href="#event">Event</a>
-        <a href="#dictionary">Kamus Crypto</a>
-        <a href="#market">Market</a>
-        <a href="#luxquant">LuxQuant</a>
-        <a href="#solyzer">Solyzer</a>
-        <a href="#prochat">Pro Chatbot</a>
-        <a href="#newsletter" class="btn btn-ghost">Subscribe</a>
+          <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="nav-links" id="nav-links">
+            <a href="#coinmagz">CoinMagz</a>
+            <a href="#learn">Belajar</a>
+            <a href="#news">Berita</a>
+            <a href="#event">Event</a>
+            <a href="#dictionary">Kamus Crypto</a>
+            <a href="#market">Market</a>
+            <a href="#luxquant">LuxQuant</a>
+            <a href="#solyzer">Solyzer</a>
+            <a href="#prochat">Pro Chatbot</a>
+            <a href="#newsletter" class="btn btn-ghost">Subscribe</a>
+          </div>
       </div>
     </nav>
   </div>
 
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.getElementById('nav-links');
+      hamburger.addEventListener('click', function() {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('show');
+      });
+    </script>
   <header class="hero container">
     <div class="grid hero-grid">
       <div>
