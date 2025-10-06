@@ -27,6 +27,10 @@ nav{margin:12px auto;padding:10px 16px;border-radius:16px;width:min(1100px,var(-
 .nav-links a{padding:10px 12px;border-radius:10px;color:var(--txt-2)}
 .nav-links a:hover,.nav-links a:focus-visible{color:var(--txt-1);background:rgba(255,255,255,.08);outline:none}
 
+.nav-group {
+  position: relative;
+}
+
 /* Hamburger styles */
 .hamburger {
   display: none;
