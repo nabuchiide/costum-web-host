@@ -2,6 +2,32 @@
 // Tambahkan script custom di sini
 
 document.addEventListener('DOMContentLoaded', function() {
+  // ====== Top Movers Realtime (CoinGecko) ======
+  async function updateTopMovers() {
+    const moversEl = document.getElementById('top-movers-list');
+    if (!moversEl) return;
+    moversEl.innerHTML = '<div class="stat"><span>Loading…</span></div>';
+    try {
+      // Ambil data 24H movers dari CoinGecko
+      const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=percent_change_24h_desc&per_page=5&page=1&sparkline=false';
+      const res = await fetch(url);
+      const data = await res.json();
+      moversEl.innerHTML = '';
+      data.slice(0, 5).forEach(coin => {
+        const change = coin.price_change_percentage_24h;
+        const sign = change > 0 ? '+' : '';
+        const stat = document.createElement('div');
+        stat.className = 'stat';
+        stat.innerHTML = `<span><img src="${coin.image}" alt="${coin.symbol}" style="width:18px;vertical-align:middle;margin-right:6px;">${coin.symbol.toUpperCase()}</span><b style="color:${change>0?'#41e1b1':'#ff5c5c'}">${sign}${change.toFixed(2)}%</b>`;
+        moversEl.appendChild(stat);
+      });
+    } catch (err) {
+      moversEl.innerHTML = '<div class="stat"><span>Error loading data</span></div>';
+    }
+  }
+  updateTopMovers();
+  // Optional: refresh setiap 5 menit
+  setInterval(updateTopMovers, 300000);
   // Hamburger
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.getElementById('nav-links');
