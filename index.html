@@ -470,9 +470,8 @@
 
     const history = [];
 
-    function sanitize(text){
-      return String(text).replace(/</g,'&lt;').replace(/
-/g,'<br>');
+  function sanitize(text){
+      return String(text).replace(/</g,'&lt;').replace(/\n/g,'<br>');
     }
     function addMsg(role, text){
       const wrap = document.createElement('div');
@@ -504,11 +503,10 @@
     });
 
     // Unit tests
-    console.group('HodlBot tests');
-    console.assert(sanitize('a<b')==='a&lt;b','Escape < failed');
-    console.assert(sanitize('x
-y')==='x<br>y','Newline failed');
-    console.groupEnd();
+  console.group('HodlBot tests');
+  console.assert(sanitize('a<b')==='a&lt;b','Escape < failed');
+  console.assert(sanitize('x\ny')==='x<br>y','Newline failed');
+  console.groupEnd();
 
     // ====== Pro Chatbot (section besar) ======
     const proMsgs = document.getElementById('proMsgs');
