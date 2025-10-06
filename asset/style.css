@@ -37,6 +37,17 @@ nav {
   gap: 24px;
 }
 .nav-links a {
+/* Subscribe button always at the end on desktop */
+.nav-links a.btn.btn-ghost {
+  order: 99;
+  margin-left: auto;
+}
+@media (max-width: 1024px) {
+  .nav-links a.btn.btn-ghost {
+    order: unset;
+    margin-left: 0;
+  }
+}
   padding: 14px 18px;
   font-size: 1rem;
 }
