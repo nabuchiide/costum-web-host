@@ -235,7 +235,8 @@
         <div class="glass media" aria-hidden="true" style="padding:0;">
           <!-- TradingView Symbol Overview Widget BEGIN -->
           <div class="ratio" style="background:none; min-height:420px; display:flex; align-items:center; justify-content:center;">
-            <iframe src="https://s.tradingview.com/widgetembed/?widget=symbol-overview&symbols=BINANCE:BTCUSDT&locale=id&colorTheme=dark&isTransparent=true&width=100%25&height=420" style="width:100%; height:420px; border:none;" allowtransparency="true" scrolling="no" allowfullscreen></iframe>
+            <!-- <iframe src="https://s.tradingview.com/widgetembed/?widget=symbol-overview&symbols=BINANCE:BTCUSDT&locale=id&colorTheme=dark&isTransparent=true&width=100%25&height=420" style="width:100%; height:420px; border:none;" allowtransparency="true" scrolling="no" allowfullscreen></iframe> -->
+            <div id="tradingview-widget"></div>
           </div>
           <!-- TradingView Symbol Overview Widget END -->
         </div>
@@ -472,6 +473,57 @@
       <button class="btn" type="submit">Kirim</button>
     </form>
   </div>
+
+  <script>
+  (function() {
+    const widgetScript = document.createElement('script');
+    widgetScript.type = 'text/javascript';
+    widgetScript.async = true;
+    widgetScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js';
+
+    widgetScript.innerHTML = JSON.stringify({
+      symbols: [
+        ["BINANCE:BTCUSD|1D"],
+        ["COINBASE:ETHUSD|1D"]
+      ],
+      chartType: "candlesticks",
+      colorTheme: "dark",
+      isTransparent: true,
+      autosize: true,
+      locale: "en",
+      fontSize: "12",
+      headerFontSize: "large",
+      fontFamily: "Roboto, sans-serif",
+      lineWidth: 2,
+      upColor: "#22ab94",
+      downColor: "#f7525f",
+      borderUpColor: "#22ab94",
+      borderDownColor: "#f7525f",
+      wickUpColor: "#22ab94",
+      wickDownColor: "#f7525f",
+      volumeUpColor: "rgba(34, 171, 148, 0.5)",
+      volumeDownColor: "rgba(247, 82, 95, 0.5)",
+      backgroundColor: "transparent",
+      valuesTracking: "1",
+      changeMode: "price-and-percent",
+      scalePosition: "right",
+      scaleMode: "Normal",
+      hideDateRanges: false,
+      hideMarketStatus: false,
+      hideSymbolLogo: false,
+      dateRanges: [
+        "1d|1",
+        "1m|30",
+        "3m|60",
+        "12m|1D",
+        "60m|1W",
+        "all|1M"
+      ]
+    });
+
+    document.getElementById('tradingview-widget').appendChild(widgetScript);
+  })();
+</script>
 
 </body>
 
