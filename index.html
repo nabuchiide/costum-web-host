@@ -231,9 +231,15 @@
     <div class="grid market-grid">
       <div>
         <h2 class="section-title">Crypto Market Today</h2>
-        <p class="section-sub">Snapshot harga live — ganti dengan embed TradingView kalian.</p>
-        <div class="glass media" aria-hidden="true">
-          <div class="ratio" style="color:var(--txt-2);"><span>📈 TradingView Chart Placeholder</span></div>
+        <p class="section-sub">Snapshot harga live — powered by TradingView.</p>
+        <div class="glass media" aria-hidden="true" style="padding:0;">
+          <!-- TradingView Widget BEGIN -->
+          <div class="ratio" style="background:none; min-height:420px;">
+            <div id="tradingview-widget" style="width:100%; height:420px;">
+              <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview-widget&symbol=BINANCE:BTCUSDT&interval=1H&theme=dark&style=1&locale=id&toolbarbg=rgba(255,255,255,0.02)&hide_top_toolbar=true&hide_side_toolbar=false&allow_symbol_change=true&save_image=false&studies=[]" style="width:100%; height:420px; border:none;" allowtransparency="true" scrolling="no" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!-- TradingView Widget END -->
         </div>
       </div>
       <aside class="glass card" aria-label="Top Movers">
