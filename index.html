@@ -233,11 +233,37 @@
         <h2 class="section-title">Crypto Market Today</h2>
         <p class="section-sub">Snapshot harga live — powered by TradingView.</p>
         <div class="glass media" aria-hidden="true" style="padding:0;">
-          <!-- TradingView Symbol Overview Widget BEGIN -->
-          <div class="ratio" style="background:none; min-height:420px; display:flex; align-items:center; justify-content:center;">
-            <iframe src="https://s.tradingview.com/widgetembed/?widget=symbol-overview&symbol=BINANCE:BTCUSDT&locale=id&colorTheme=dark&isTransparent=true&width=100%25&height=420" style="width:100%; height:420px; border:none;" allowtransparency="true" scrolling="no" allowfullscreen></iframe>
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container" style="min-height:420px;">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright">
+              <a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener nofollow" target="_blank"><span class="blue-text">BTCUSDT</span></a>
+              <span class="and">&nbsp;and&nbsp;</span>
+              <a href="https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE" rel="noopener nofollow" target="_blank"><span class="blue-text">Ethereum rate</span></a>
+              <span class="trademark">&nbsp;by TradingView</span>
+            </div>
+            <script type="text/javascript">
+              new TradingView.widget({
+                "container_id": "tradingview-widget-container__widget",
+                "width": "100%",
+                "height": "420",
+                "symbols": [
+                  ["BINANCE:BTCUSDT|ALL"],
+                  ["BINANCE:ETHUSD|ALL"]
+                ],
+                "colorTheme": "dark",
+                "isTransparent": false,
+                "locale": "en",
+                "chartType": "area",
+                "lineWidth": 2,
+                "fontColor": "#DBDBDB",
+                "backgroundColor": "#0F0F0F",
+                "autosize": true
+              });
+            </script>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
           </div>
-          <!-- TradingView Symbol Overview Widget END -->
+          <!-- TradingView Widget END -->
         </div>
       </div>
       <aside class="glass card" aria-label="Top Movers">
