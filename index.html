@@ -67,50 +67,73 @@
 
   <!-- CoinMagz -->
   <!-- Info & Update Kelompok: CoinMagz, Berita, Event -->
-  <section id="info-update" class="container" aria-label="Info & Update">
-    <h2 class="section-title">Info & Update</h2>
-    <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:28px;align-items:start;">
-      <!-- CoinMagz Card -->
-      <div class="glass card">
-        <h3>CoinMagz</h3>
-        <p class="section-sub">Temukan profil berbagai macam cryptocurrency di sini.</p>
-        <div>Placeholder konten CoinMagz (hubungkan ke route/halaman aslinya).</div>
-      </div>
-      <!-- Berita Card -->
-      <div class="glass card">
-        <h3>Berita Terbaru</h3>
+  <!-- CoinMagz -->
+  <section id="coinmagz" class="container" aria-label="CoinMagz">
+    <h2 class="section-title">CoinMagz</h2>
+    <p class="section-sub">Temukan profil berbagai macam cryptocurrency di sini.</p>
+    <div class="glass card">Placeholder konten CoinMagz (hubungkan ke route/halaman aslinya).</div>
+  </section>
+
+  <!-- Berita & Trending -->
+  <section id="news" class="container" aria-label="Berita & Tren">
+    <div class="grid news-grid">
+      <div>
+        <h2 class="section-title">Berita Terbaru</h2>
         <p class="section-sub">Kurasi cepat dari tim kami. Ringkas, to the point, dan bebas clickbait.</p>
         <div class="news-list">
           <article class="news-item">
             <img class="news-thumb" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1641939400913-b7f7c4c2ce15?q=80&w=1200&auto=format&fit=crop" alt="Ilustrasi crowdsourcing Bitcoin"/>
             <div>
-              <h4>Pasokan Token HYPE Diusulkan Turun 45%, Dorong Penilaian Lebih Stabil</h4>
+              <h3>Pasokan Token HYPE Diusulkan Turun 45%, Dorong Penilaian Lebih Stabil</h3>
               <div class="meta">23 Sep 2025 • Alejandro</div>
             </div>
           </article>
           <article class="news-item">
             <img class="news-thumb" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1621768216002-5ac171876625?q=80&w=1200&auto=format&fit=crop" alt="Grafik volatilitas market"/>
             <div>
-              <h4>Likuidasi Bitcoin Capai $1,8 Miliar, Pasar Bergejolak</h4>
+              <h3>Likuidasi Bitcoin Capai $1,8 Miliar, Pasar Bergejolak</h3>
               <div class="meta">23 Sep 2025 • Budi</div>
             </div>
           </article>
           <article class="news-item">
             <img class="news-thumb" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1621768216163-8bf4b6a4f6e0?q=80&w=1200&auto=format&fit=crop" alt="Gelombang altcoin"/>
             <div>
-              <h4>Harga Altcoin Jatuh, Whale Ambil Untung Fantastis</h4>
+              <h3>Harga Altcoin Jatuh, Whale Ambil Untung Fantastis</h3>
               <div class="meta">22 Sep 2025 • Sari</div>
             </div>
           </article>
         </div>
       </div>
-      <!-- Event Card -->
-      <div class="glass card">
-        <h3>Event</h3>
-        <p class="section-sub">Info event crypto/web3 terbaru.</p>
-        <div>Placeholder event. Tambahkan daftar event di sini.</div>
-      </div>
+      <aside class="glass trend-card trending" aria-labelledby="trend-title">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px;">
+          <h3 id="trend-title" style="margin:0; font-size:18px;">🔥 What's Trending</h3>
+          <span class="chip">Minggu ini</span>
+        </div>
+        <div class="trend-list" role="list">
+          <div class="trend" role="listitem">
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1642795511482-23d4f8f3da7e?q=80&w=900&auto=format&fit=crop" alt="RWA dashboard"/>
+            <div>
+              <h4>$ChainBank Kumpulkan $1 Juta — Transformasi RWA</h4>
+              <div class="meta">27 Feb 2025</div>
+            </div>
+          </div>
+          <div class="trend" role="listitem">
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600962815726-457c3b3c7c53?q=80&w=900&auto=format&fit=crop" alt="Deribit orderbook"/>
+            <div>
+              <h4>Whale Solana Membuat Gelombang di Deribit</h4>
+              <div class="meta">25 Feb 2025</div>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
+  </section>
+
+  <!-- Event -->
+  <section id="event" class="container" aria-label="Event">
+    <h2 class="section-title">Event</h2>
+    <p class="section-sub">Info event crypto/web3 terbaru.</p>
+    <div class="glass card">Placeholder event. Tambahkan daftar event di sini.</div>
   </section>
           <div class="trend" role="listitem">
             <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1605902711834-8b11c3c3d7b0?q=80&w=900&auto=format&fit=crop" alt="Percakapan sosial media"/>
