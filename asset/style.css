@@ -53,7 +53,7 @@ nav{margin:12px auto;padding:10px 16px;border-radius:16px;width:min(1100px,var(-
     position: absolute;
     top: 60px;
     right: 16px;
-    background: var(--glass);
+    background: rgba(20, 24, 38, 0.95); /* warna solid, bisa disesuaikan */
     flex-direction: column;
     gap: 0;
     min-width: 180px;
@@ -61,6 +61,7 @@ nav{margin:12px auto;padding:10px 16px;border-radius:16px;width:min(1100px,var(-
     box-shadow: var(--shadow);
     padding: 18px 0;
     display: none;
+    border: 1px solid rgba(255,255,255,.14);
   }
   .nav-links.show {
     display: flex;
